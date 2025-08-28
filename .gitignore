@@ -1,0 +1,63 @@
+# Compiled binaries
+ft_ls
+ft_ls.exe
+
+# Object files
+*.o
+*.obj
+obj/
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Static and dynamic libraries
+*.a
+*.so
+*.lib
+*.dll
+
+# Executables
+*.exe
+*.out
+*.app
+
+# IDE and editor files
+.vscode/
+.vs/
+*.swp
+*.swo
+*~
+.idea/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Core dumps
+core.*
+
+# Memory check files
+*.valgrind
+
+# Test files (if any)
+test_*
+tests/output/
+
+# Backup files
+*.bak
+*.backup
+
+# Log files
+*.log
