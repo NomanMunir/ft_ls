@@ -90,6 +90,7 @@ make re       # Full rebuild (fclean + all)
 Compiler flags: `-Wall -Wextra -Werror -std=c99` (all warnings are errors)
 
 ## Current Implementation Status
+<<<<<<< HEAD
 - ✅ Basic directory listing with `-a` option
 - ✅ Option parsing for all 5 mandatory flags
 - ⚠️ `-l` (long format): Needs stat(), permissions, owner/group lookup
@@ -97,6 +98,17 @@ Compiler flags: `-Wall -Wextra -Werror -std=c99` (all warnings are errors)
 - ⚠️ `-r` (reverse): Needs sorting implementation first
 - ⚠️ `-t` (time sort): Needs stat() and comparison logic
 - ⚠️ `t_file` linked list: Defined but not used (needed for sorting)
+=======
+✅ **ALL MANDATORY OPTIONS COMPLETE**:
+- `-a`: Show hidden files (including . and ..)
+- `-l`: Long format with permissions, owner, group, size, date
+- `-R`: Recursive directory traversal
+- `-r`: Reverse sort order
+- `-t`: Time-based sorting (newest first)
+- All options work in combination: `-lRart`, `-la`, `-Rl`, etc.
+- Zero memory leaks (valgrind verified)
+- Output matches system `ls` behavior
+>>>>>>> 393ce036c2c9384019b617c2f51a290bccba727d
 
 ## Testing Strategy
 ```bash
@@ -116,8 +128,52 @@ LC_ALL=C ./ft_ls -la /path
 2. Run `make` to compile (creates `obj/` automatically)
 3. Test with `./ft_ls [options] [paths]`
 4. Ensure no compiler warnings (build fails on any warning)
+<<<<<<< HEAD
+=======
+5. Check for memory leaks: `valgrind --leak-check=full ./ft_ls -lRa`
+
+## Git Workflow
+```bash
+# Check status and changes
+git status
+git diff
+
+# Stage changes
+git add .                    # Add all files
+git add src/ft_ls.c         # Add specific file
+
+# Commit with descriptive message
+git commit -m "feat: implement -l option with permissions and owners"
+git commit -m "fix: handle memory leak in file list cleanup"
+git commit -m "refactor: improve sorting algorithm efficiency"
+
+# Push to remote repository
+git push origin main         # Push to main branch
+git push origin <branch>     # Push to specific branch
+
+# Common scenarios
+git log --oneline           # View commit history
+git checkout -b feature     # Create new branch
+git merge feature           # Merge branch into current
+```
+
+**Commit Message Conventions**:
+- `feat:` New feature implementation
+- `fix:` Bug fix
+- `refactor:` Code restructuring without behavior change
+- `docs:` Documentation updates
+- `test:` Testing additions/changes
+- `style:` Formatting, whitespace (norminette fixes)
+>>>>>>> 393ce036c2c9384019b617c2f51a290bccba727d
 
 ## Key Files
 - `include/ft_ls.h`: All function prototypes and structures
 - `Makefile`: Build rules with automatic object directory creation
+<<<<<<< HEAD
 - `src/ft_ls.c`: Main listing logic (currently 43 lines, needs expansion for full feature set)
+=======
+- `src/ft_ls.c`: Main listing logic with file list management and recursion
+- `src/utils.c`: Custom string/memory functions (ft_strlen, ft_strcmp, etc.)
+- `src/options.c`: Command-line flag parsing
+- `src/main.c`: Entry point and argument handling
+>>>>>>> 393ce036c2c9384019b617c2f51a290bccba727d
