@@ -23,6 +23,7 @@ obj/
 *.exe
 *.out
 *.app
+ft_ls
 
 # IDE and editor files
 .vscode/
